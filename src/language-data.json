@@ -1,0 +1,18 @@
+{
+    "en": {
+        "en-lang-btn": "eng",
+        "ru-lang-btn": "rus",
+        "search-placeholder": "search city",
+        "search-btn": "search",
+        "latitude": "Latitude",
+        "longitude": "Longitude"
+    },
+    "ru": {
+        "en-lang-btn": "анг",
+        "ru-lang-btn": "рус",
+        "search-placeholder": "поиск города",
+        "search-btn": "поиск",
+        "latitude": "Широта",
+        "longitude": "Долгота"
+    }
+}

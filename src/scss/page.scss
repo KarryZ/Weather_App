@@ -1,0 +1,38 @@
+// .page {
+//   width: 100%;
+
+//   &__container {
+//     margin: 0 auto;
+//     width: 900px;
+//   }
+// }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+body {
+  min-height: 100vh;
+  padding: 40px;
+  font-family: Montserrat, tahoma, sans-serif;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  font-family: Montserrat, tahoma, sans-serif;
+}
+
+/* location */
+
+/* weather */
+
+/* weatherFuture */
