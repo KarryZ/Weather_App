@@ -16,4 +16,3 @@ Use `npm i` for install node modules
 `npm start` for start dev-server http://localhost:8080/
 
 `npm run build` for build app
-
