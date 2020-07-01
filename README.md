@@ -2,7 +2,7 @@
 
 ### Demo
 
-
+Link for demo: [Weather application](https://karryz.github.io/Weather_App/) 
 
 ### Install
 
