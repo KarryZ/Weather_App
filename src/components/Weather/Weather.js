@@ -21,11 +21,11 @@ export default class {
         const dateText = date.createLayout();
         this.weatherPanel.append(dateText);
 
-        const weatherBlock = new WeatherBlock(this.weatherData, this.currentTempuretureType);
+        const weatherBlock = new WeatherBlock(this.weatherData, this.currentTempuretureType, this.currentLang, this.currentLangData);
         const weatherBlockText = weatherBlock.createLayout();
         this.weatherPanel.append(weatherBlockText);
 
-        const weatherFuture = new WeatherFuture(this.weatherData.forecast);
+        const weatherFuture = new WeatherFuture(this.weatherData.forecast, this.currentTempuretureType, this.currentLang, this.currentLangData);
         const weatherFutureText = weatherFuture.createLayout();
         this.weatherPanel.append(weatherFutureText);
      }
@@ -34,8 +34,9 @@ export default class {
         parent.append(this.weatherPanel);
     }
 
-    requestWeather(currentCity, currentLang, currentTempuretureType) {
+    requestWeather(currentCity, currentLang, currentLangData, currentTempuretureType) {
       this.currentLang = currentLang;
+      this.currentLangData = currentLangData;
       this.currentTempuretureType = currentTempuretureType;
       let apiKey = "2003c596cad643f8969163048200106";
   

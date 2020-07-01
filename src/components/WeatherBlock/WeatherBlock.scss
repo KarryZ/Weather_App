@@ -1,0 +1,17 @@
+.weather-block{
+    display: flex;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.weather-current-info{
+    img {
+            height: 80px;
+            position: relative;
+            left: -19px;
+          }
+}
+
+.weather-temp {
+    font-size: 10rem;
+}

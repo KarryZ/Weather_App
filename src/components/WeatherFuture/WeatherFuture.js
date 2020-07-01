@@ -1,6 +1,9 @@
 export default class {
-    constructor(forecast){
+    constructor(forecast, currentTempuretureType, currentLang, currentLangData){
         this.forecast = forecast;
+        this.currentTempuretureType = currentTempuretureType;
+        this.currentLang = currentLang;
+        this.currentLangData = currentLangData;
     }
 
     createLayout(){
@@ -19,22 +22,27 @@ export default class {
 
             const dayTemp =  document.createElement('div');
             dayTemp.className ="day-temp";
-            dayTemp.innerHTML = element.day.maxtemp_f;
+            dayTemp.innerHTML = this.countTempByType(element.day);
 
             const iconInfo =  document.createElement('img');
             iconInfo.src = element.day.condition.icon;
 
             futureDiv.append(dayDiv);
+            infoDiv.append(dayTemp, iconInfo);
             futureDiv.append(infoDiv);
-            futureDiv.append(dayTemp);
-            futureDiv.append(iconInfo);
             dateContainer.append(futureDiv);
         });
 
         return dateContainer;
     }
 
+    countTempByType(dayTemp){
+        return this.currentTempuretureType === "F" ? `${dayTemp.avgtemp_f}°` :  `${dayTemp.avgtemp_c}°`;
+    }
+
     receiveCurrentDate(sDate){
-        return new Date(Date.parse(sDate));
+        let dayNumb = new Date(Date.parse(sDate)).getDay();
+        let weekDay = this.currentLangData.weekDays[dayNumb-1];
+        return weekDay;
     }
 }

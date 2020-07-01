@@ -12,7 +12,7 @@ class App {
   constructor() {
     this.currentLang = "en";
     this.currentTempuretureType = "F";
-    this.buttonsLang = LanguageData[this.currentLang];
+    this.currentLangData = LanguageData[this.currentLang];
     const location = new Location()
       .then((locationInfo) => {
         this.locationInfo = locationInfo;
@@ -26,7 +26,7 @@ class App {
     this.onsearchEvent = (currentCity) => {
       console.log(`onSearch ${currentCity}`);
 
-      this.weather.requestWeather(currentCity)
+      this.weather.requestWeather(currentCity, this.currentLang, this.currentLangData, this.currentTempuretureType)
         .then((data) => {
           if (data) {
             this.currentCity = currentCity;
@@ -39,7 +39,7 @@ class App {
 
     this.onChangeLanguage = (selectedLanguage) => {
       this.currentLang = selectedLanguage;
-      this.buttonsLang = LanguageData[this.currentLang];
+      this.currentLangData = LanguageData[this.currentLang];
       this.clearLayout();
       this.createLayout();
     };
@@ -62,7 +62,7 @@ class App {
       onsearchEvent: this.onsearchEvent,
       onChangeLanguage: this.onChangeLanguage,
       onChangeTempureture: this.onChangeTempureture,
-      buttonsLang: this.buttonsLang
+      buttonsLang: this.currentLangData
     });
 
     this.weather = new Weather();
@@ -70,9 +70,9 @@ class App {
 
 
     const promises = [];
-    promises.push(this.weather.requestWeather(this.currentCity, this.currentLang, this.currentTempuretureType));
+    promises.push(this.weather.requestWeather(this.currentCity, this.currentLang, this.currentLangData, this.currentTempuretureType));
     Promise.all(promises).then((data) => {
-      this.locationMap = new MapInfo(this.currentCity, this.buttonsLang, this.weather.weatherData.location.lat, this.weather.weatherData.location.lon);
+      this.locationMap = new MapInfo(this.currentCity, this.currentLangData, this.weather.weatherData.location.lat, this.weather.weatherData.location.lon);
       const body = document.querySelector('body');
       const container = document.createElement('div');
       const main = document.createElement('div');
@@ -94,8 +94,3 @@ class App {
 }
 
 const app = new App();
-
-
-
-
-

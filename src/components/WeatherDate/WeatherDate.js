@@ -6,7 +6,7 @@ export default class {
     createLayout(){
         const dateDiv = document.createElement('div');
         dateDiv.className = "weater-date";
-        dateDiv.innerHTML = this.newDate;
+        dateDiv.innerHTML =  `<h2>${this.newDate}</h2>`;
         return dateDiv;
     }
 }

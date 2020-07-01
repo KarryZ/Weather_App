@@ -8,7 +8,7 @@ export default class {
     createLayout(){
         const locationDiv = document.createElement('div');
         locationDiv.className = "weather-location";
-        locationDiv.innerHTML = `${this.location.name} ${this.location.country}`;
+        locationDiv.innerHTML = `<h1>${this.location.name} ${this.location.country}</h1>`;
         return locationDiv;
     }
 

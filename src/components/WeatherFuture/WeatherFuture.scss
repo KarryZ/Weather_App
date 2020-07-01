@@ -1,0 +1,18 @@
+.weather-future, .future-info{
+    display: flex;
+    width: 49%;
+    justify-content: space-between;
+}
+
+.future-info{
+    align-items: center;
+    font-size: 3rem;
+    img{
+        position: relative;
+        top: -10px;
+    }
+}
+
+.day{
+    font-size: 1.5rem;
+}

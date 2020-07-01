@@ -5,7 +5,14 @@
         "search-placeholder": "search city",
         "search-btn": "search",
         "latitude": "Latitude",
-        "longitude": "Longitude"
+        "longitude": "Longitude",
+        "feelsLike": "feels like",
+        "wind": "wind",
+        "speed": "m/s",
+        "humidity": "humidity",
+        "weekDays": [
+           "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ]
     },
     "ru": {
         "en-lang-btn": "анг",
@@ -13,6 +20,13 @@
         "search-placeholder": "поиск города",
         "search-btn": "поиск",
         "latitude": "Широта",
-        "longitude": "Долгота"
+        "longitude": "Долгота",
+        "feelsLike": "ощущается как",
+        "wind": "ветер",
+        "speed": "м/с",
+        "humidity": "влажность",
+        "weekDays": [
+           "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"
+        ]
     }
 }
